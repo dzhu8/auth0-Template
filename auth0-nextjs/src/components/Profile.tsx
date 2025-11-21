@@ -1,6 +1,7 @@
 // We configure this to be the page that users can access after logging in and clicking the "Profile" button.
 "use client";
 
+import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function Profile() {
@@ -34,6 +35,9 @@ export default function Profile() {
                />
                <h2 className="profile-name">{user.name}</h2>
                <p className="profile-email">{user.email}</p>
+               <Link href="/celebrate" className="button celebrate">
+                    Celebrate
+               </Link>
           </div>
      );
 }

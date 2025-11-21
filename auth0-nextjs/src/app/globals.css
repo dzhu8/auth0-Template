@@ -140,6 +140,17 @@ body {
      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
+.button.celebrate {
+     background-color: #fcd34d;
+     color: #1a1e27;
+}
+
+.button.celebrate:hover {
+     background-color: #fbbf24;
+     transform: translateY(-5px) scale(1.03);
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
 .logged-in-section {
      display: flex;
      flex-direction: column;
@@ -180,6 +191,82 @@ body {
 .profile-email {
      font-size: 1.15rem;
      text-align: center;
+}
+
+
+
+
+
+
+
+.confetti-page {
+     position: relative;
+     width: 100vw;
+     height: 100vh;
+     background-color: #ffffff;
+     color: #1a202c;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+}
+
+.confetti-message {
+     position: relative;
+     z-index: 2;
+     text-align: center;
+     padding: 2.5rem 3rem;
+     border-radius: 20px;
+     background: rgba(255, 255, 255, 0.85);
+     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.confetti-message h1 {
+     font-size: 3rem;
+     margin-bottom: 1rem;
+     color: #0f172a;
+}
+
+.confetti-message p {
+     font-size: 1.2rem;
+     margin-bottom: 2rem;
+     color: #334155;
+}
+
+.confetti-container {
+     position: absolute;
+     inset: 0;
+     overflow: hidden;
+}
+
+.confetti-piece {
+     position: absolute;
+     top: -10px;
+     border-radius: 2px;
+     animation-name: confettiFall;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
+     --confetti-drift: 20vw;
+     --confetti-rotate-mid: 180deg;
+     --confetti-rotate-end: 360deg;
+}
+
+@keyframes confettiFall {
+     0% {
+          transform: translate3d(0, -5vh, 0) rotate(0deg) scale(1);
+          opacity: 0;
+     }
+     15% {
+          opacity: 1;
+     }
+     65% {
+          transform: translate3d(var(--confetti-drift), 65vh, 0) rotate(var(--confetti-rotate-mid)) scale(0.95);
+     }
+     100% {
+          transform: translate3d(calc(-1 * var(--confetti-drift)), 105vh, 0) rotate(var(--confetti-rotate-end)) scale(0.8);
+          opacity: 0;
+     }
 }
 
 @keyframes fadeIn {

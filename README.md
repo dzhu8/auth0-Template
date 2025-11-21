@@ -52,3 +52,8 @@ $AppName = "My App"; winget install Auth0.CLI; auth0 login --no-input; auth0 app
 ```
 
 Note that this template uses Auth0-style branding (see `globals.css`) instead of the Next.js default. 
+
+## Moving into a Basic Implementation: 
+This template provides the basic skeleton to allow for Auth0-based authentication. To start building up the application post-signin, follow these steps:
+
+

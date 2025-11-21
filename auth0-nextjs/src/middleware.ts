@@ -1,3 +1,12 @@
+// The middleware does most of the heavy lifting for auth0. It mounts all of the following authentication routes:
+//  - /auth/login
+//  - /auth/logout
+//  - /auth/callback
+//  - /auth/profile
+//  - /auth/access-token
+//  - /auth/backchannel-logout
+//  - /auth/me
+
 import type { NextRequest } from "next/server";
 import { auth0 } from "./lib/auth0";
 

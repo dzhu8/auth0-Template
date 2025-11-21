@@ -55,5 +55,23 @@ Note that this template uses Auth0-style branding (see `globals.css`) instead of
 
 ## Moving into a Basic Implementation: 
 This template provides the basic skeleton to allow for Auth0-based authentication. To start building up the application post-signin, follow these steps:
+* Go to the [Auth0 dashboard](https://www.auth0.com) (after signing in)
+* Go to "Application settings" --> find the "Allowed Callback URLs" box
+* Add `http://localhost:3000/auth/callback`, `http://localhost:3000` (note this will be different for a production application and not running locally! In this case, use `{your app's base URL}/api/auth/callback/auth0`. Do the same for the allowed logout URLs and allowed web origins (see below). Note this will also be different if you've configured the port to be non-default (e.g. 8000, 5173, etc.)).
+* Find the "Allowed Logout URLs" (still on the "Application settings" page)
+* Add `http://localhost:3000` (again, or the port you're using).
+* Go to "Allowed Web Origins", and add `http://localhost:3000`. 
+
+This template also includes an example additional web page that can be navigated to after sign-in, following the Next.js convention. The page is in `app/celebrate/page.tsx`. The logic for navigation is included in `Profile.tsx`:
+
+```
+<Link href="/celebrate" className="button celebrate">
+     Celebrate
+</Link>
+```
+where `button.celebrate` is defined as a CSS class in `globals.css`. Take a bit of a confetti break before you head back. 
+
+## Testing this application
+Run `npm run dev`, then navigate to `http://localhost:3000` (or the address that appears in the terminal where you ran the command).
 
 
